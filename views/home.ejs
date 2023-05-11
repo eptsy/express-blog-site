@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="shortcut icon" href="/images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <%- include('partials/header'); -%>
+    <div id="home" class="container">
+      <h1>home</h1>
+      <% theposts.reverse().forEach((elem)=>{ %>
+      <div class="home__blog">
+        <h1><%= elem.postTitle %></h1>
+        <p><%= elem.postDesc.slice(0, 85) + " ..." %> <a href="/posts/<%= elem.postTitle %>">[Read More]</a></p>
+      </div>
+      <% }) %>
+    </div>
+    <%- include('partials/footer'); -%>
+  </body>
+</html>
